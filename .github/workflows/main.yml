@@ -5,8 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   schedule:
-    # Runs at 13:30 UTC every day (see https://crontab.guru)
-    - cron: '0 19 * * *'
+    # Runs at 22:00 UTC every day (see https://crontab.guru)
+    - cron: '0 16 * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
