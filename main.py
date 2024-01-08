@@ -27,7 +27,7 @@ result = soup.find("td", {"data-date": stringday})
 
 # Access token accessibility test
 access_token = os.environ.get("PUSH_API_KEY")
-print(f"Access token: {access_token}")
+
 if not access_token:
     print("Error: Access token is missing.")
     sys.exit(errno.EINVAL)
