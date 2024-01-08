@@ -25,6 +25,12 @@ stringday = today.strftime("%Y-%m-%d")
 # Get today's contributions
 result = soup.find("td", {"data-date": stringday})
 
+# Access token accessibility test
+access_token = os.environ.get("PUSH_API_KEY")
+if not access_token:
+    print("Error: Access token is missing.")
+    sys.exit(errno.EINVAL)
+
 if result["data-level"] != "0":
     # Send push notification if contributions are not 0
     push_notification_command = (
