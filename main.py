@@ -37,6 +37,7 @@ if result["data-level"] != "0":
         # Send push notification if contributions are not 0
         req = requests.get(f"https://push.techulus.com/api/v1/notify/{access_token}?title=Hi,Sharon👋&body=You have contributions today. Keep up the good work! 🚀")
         # Exit with an error status
+        commit_to_private_repo(gh_token)
         sys.exit(os.EX_OK)
     except Exception as e :
         print(e)
