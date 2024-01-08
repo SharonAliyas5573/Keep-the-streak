@@ -37,10 +37,14 @@ if result["data-level"] != "0":
         # Send push notification if contributions are not 0
         req = requests.get(f"https://push.techulus.com/api/v1/notify/{access_token}?title=Hi,Sharon👋&body=You have contributions today. Keep up the good work! 🚀")
         # Exit with an error status
-        sys.exit(errno.ECANCELED)
+        sys.exit(os.EX_OK)
     except Exception as e :
         print(e)
         sys.exit(errno.ECANCELED)
-
-# Exit with a success status if contributions are 0
-sys.exit(os.EX_OK)
+else:
+    try:
+        req = requests.get(f"https://push.techulus.com/api/v1/notify/{access_token}?title=Hi,Sharon👋&body=You haven't commited today. Don't lose your commit streak 🚀")
+        sys.exit(os.EX_OK)
+    except Exception as e :
+        print(e)
+        sys.exit(errno.ECANCELED)
