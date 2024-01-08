@@ -3,9 +3,8 @@
 Small GitHub Action that notifies the user when he hasn't committed on a particular day, to keep the streak. (Who wants to lose a commit streak?)
 
 # How to use
-Fork this repository, or hit `Use this template`.
-
-Paste your GitHub Profile URL, like [https://github.com/cristicretu](https://github.com/cristicretu). This is used to crawl the page and get the number of commits for today.
+Fork this repository
+Paste your GitHub Profile URL, like [https://github.com/SharonAliyas5573](https://github.com/SharonAliyas5573). This is used to crawl the page and get the number of commits for today.
 > /main.py
 
 The GitHub Action runs every day at 13:30 UTC, change it to whatever time you want
