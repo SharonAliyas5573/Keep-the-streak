@@ -32,4 +32,4 @@ jobs:
     
     - name: Verify Commit Status for this day
       run: |
-        python ./main.py ${{ secrets.PUSH_API_KEY }}
+        python ./main.py ${{ secrets.PUSH_API_KEY }} ${{ secrets.GH_TOKEN}}
