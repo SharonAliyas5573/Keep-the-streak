@@ -35,14 +35,7 @@ if not access_token:
 if result["data-level"] != "0":
     try:
         # Send push notification if contributions are not 0
-        push_notification_command = (
-            'echo "You have contributions today. Keep up the good work! 🚀" | '
-            'curl -X POST -H "Authorization: Bearer {acceaa_token}" -H "Content-Type: application/json" '
-            '--data-binary @- https://api.pushbullet.com/v2/pushes'
-        )
-    
-        os.system(push_notification_command)
-        
+        req = requests.get(f"https://push.techulus.com/api/v1/notify/{access_token}?title=Hi,Sharon👋&body=You have contributions today. Keep up the good work! 🚀")
         # Exit with an error status
         sys.exit(errno.ECANCELED)
     except Exception as e :
