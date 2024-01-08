@@ -4,8 +4,8 @@ from datetime import datetime, timezone, timedelta
 
 def commit_to_private_repo(token):
     owner = 'SharonAliyas5573'
-    repo = 'daily_commit'
-    path = 'daily_commit.txt'
+    repo = 'keep-the-streak'
+    path = 'update.txt'
     
     token = token
     api_url = f'https://api.github.com/repos/{owner}/{repo}/contents/{path}'
