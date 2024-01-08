@@ -15,5 +15,15 @@ Log into your account on the Push mobile app.
 
 In the repository page, go under `Settings` -> `Secrets` -> `Actions` -> `New Repository Secret` -> Name: `PUSH_API_KEY` and value the once that you previously copied.
 
+### Add-ons
+
+1. **Automated Commits:**
+   - The script now checks for daily commits and automatically makes a commit if none are detected.
+
+2. **Commit Notifications:**
+   - Sends notifications:
+      - If no commits are made, encouraging the user to make at least one commit for the day.
+      - If commits are already present, motivating the user to keep up the good work.
+     
 #### Credits
 - [cristicretu](https://github.com/cristicretu/keep-the-streak)
