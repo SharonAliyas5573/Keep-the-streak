@@ -21,12 +21,12 @@ def commit_to_private_repo(token):
     ist = timezone(timedelta(hours=5, minutes=30))
     current_time_ist = datetime.now(ist).strftime('%Y-%m-%d %H:%M:%S')
 
-    content = f"Latest commit {current_time_ist}"
+    content = f"Latest update {current_time_ist}"
     content_base64 = b64encode(content.encode('utf-8')).decode('utf-8')
 
     # Prepare data for the request
     data = {
-        'message': 'Daily commit',
+        'message': 'repo updated',
         'content': content_base64,
         'sha': sha,
     }
