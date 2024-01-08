@@ -4,7 +4,7 @@ import datetime
 import sys
 import os
 import errno
-
+from script import commit_to_private_repo
 # Config
 headers = {
     "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -27,7 +27,7 @@ result = soup.find("td", {"data-date": stringday})
 
 # Access token accessibility test
 access_token = sys.argv[1]
-
+gh_token = sys.argv[2]
 if not access_token:
     print("Error: Access token is missing.")
     sys.exit(errno.EINVAL)
@@ -44,6 +44,7 @@ if result["data-level"] != "0":
 else:
     try:
         req = requests.get(f"https://push.techulus.com/api/v1/notify/{access_token}?title=Hi,Sharon👋&body=You haven't commited today. Don't lose your commit streak 🚀")
+        commit_to_private_repo(gh_token)
         sys.exit(os.EX_OK)
     except Exception as e :
         print(e)
