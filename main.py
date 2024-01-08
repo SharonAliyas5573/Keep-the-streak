@@ -26,8 +26,8 @@ stringday = today.strftime("%Y-%m-%d")
 result = soup.find("td", {"data-date": stringday})
 
 # Access token accessibility test
-access_token = os.environ.get("PUSH_API_KEY")
-
+access_token = sys.argv[1]
+print(access_token)
 if not access_token:
     print("Error: Access token is missing.")
     sys.exit(errno.EINVAL)
@@ -36,7 +36,7 @@ if result["data-level"] != "0":
     # Send push notification if contributions are not 0
     push_notification_command = (
         'echo "You have contributions today. Keep up the good work! 🚀" | '
-        'curl -X POST -H "Authorization: Bearer $PUSH_API_KEY" -H "Content-Type: application/json" '
+        'curl -X POST -H "Authorization: Bearer {acceaa_token}" -H "Content-Type: application/json" '
         '--data-binary @- https://api.pushbullet.com/v2/pushes'
     )
 
