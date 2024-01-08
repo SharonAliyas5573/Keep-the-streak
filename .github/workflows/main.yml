@@ -30,6 +30,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install bs4 requests
     
-    - name: Verify Commit Status for this day
+    - name: Running script
       run: |
         python ./main.py ${{ secrets.PUSH_API_KEY }} ${{ secrets.GH_TOKEN}}
