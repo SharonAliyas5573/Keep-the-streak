@@ -4,7 +4,7 @@ from datetime import datetime, timezone, timedelta
 
 def commit_to_private_repo(token):
     owner = 'SharonAliyas5573'
-    repo = 'keep-the-streak'
+    repo = 'daily_commit'
     path = 'update.txt'
     
     token = token
